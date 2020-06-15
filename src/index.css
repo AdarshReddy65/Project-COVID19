@@ -4,6 +4,7 @@ padding: 0px;
 }
 
 h1 {
+  font-size: 8vh !important;
   color: floralwhite;
   text-align: center;
 }

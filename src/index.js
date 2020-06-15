@@ -115,8 +115,6 @@ class Global extends React.Component {
                         &emsp; <label style={{ color: '#6c757d'}}>Deceased: {items.Global.TotalDeaths.toLocaleString('en-IN')}</label>
                     </p> 
                     <Chart
-                        width={'75vw'}
-                        height={'75vh'}
                         style={{
                             margin: "0px auto",
                             paddingTop: "25px",
@@ -126,6 +124,8 @@ class Global extends React.Component {
                         data={completeData(items)}
                         rootProps={{ 'data-testid': '1' }}
                         options={{
+                            width: '100vw',
+                            height: '75vh',
                             colorAxis: { colors: ['#FF5959', '#FF0000'] },
                             backgroundColor: '#161625',
                             legend: 'none',
@@ -227,7 +227,7 @@ class National extends React.Component {
                             &emsp; <label style={{ color: '#6c757d'}}>Deceased: {(Number(items.statewise[0].deaths)).toLocaleString('en-IN')}</label>
                         </p>
                     <Chart
-                        width={'85vw'}
+                        width={'90vw'}
                         height={'75vh'}
                         style={{
                             margin: "0px auto",
