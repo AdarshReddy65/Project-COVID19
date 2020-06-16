@@ -187,9 +187,25 @@ class National extends React.Component {
             var rawData = [
                 ["State", "Confirmed"],
             ];
+
+            var telangana = [];
+            for(let i in items.statewise){
+                if(items.statewise[i].state === "Telangana"){
+                    telangana.push(items.statewise[i].state);
+                    telangana.push(items.statewise[i].confirmed);
+                }
+            }
+
             for (let i in items.statewise) {
                 if(String(items.statewise[i].state) !== "Total"){
-                    rawData.push([{v: ('IN-'+items.statewise[i].statecode),f: items.statewise[i].state},Number(items.statewise[i].confirmed)]);   
+                    if(items.statewise[i].state === "Andhra Pradesh"){
+                        console.log(telangana[1])
+                        rawData.push([{v: ('IN-'+items.statewise[i].statecode), f : items.statewise[i].state+'+'+telangana[0]},Number(items.statewise[i].confirmed)+Number(telangana[1])]);
+                    }
+                    else
+                    {
+                        rawData.push([{v: ('IN-'+items.statewise[i].statecode),f: items.statewise[i].state},Number(items.statewise[i].confirmed)]);
+                    }   
                 }
             }
             return rawData;
