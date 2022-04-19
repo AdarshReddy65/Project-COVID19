@@ -317,7 +317,7 @@ class About extends React.Component{
 
 ReactDOM.render(
     <React.StrictMode>
-        <National/>
+        <Global/>
     </React.StrictMode>,
     document.getElementById('root')
 );
